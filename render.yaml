@@ -1,0 +1,44 @@
+services:
+  - type: web
+    name: aoun-backend
+    runtime: php
+    branch: main
+    buildCommand: "composer install"
+    startCommand: "php artisan serve --host 0.0.0.0 --port 10000"
+    envVars:
+      - key: APP_NAME
+        value: Laravel
+      - key: APP_ENV
+        value: production
+      - key: APP_KEY
+        value: base64:2QdZT+qzQ9H9Fm+1zZ7B2wLo0vT2M4XkhtxqMfL+9T4=
+      - key: APP_DEBUG
+        value: false
+      - key: APP_URL
+        value: https://your-service.onrender.com
+      - key: DB_CONNECTION
+        value: sqlite
+      - key: DB_DATABASE
+        value: /opt/render/project/src/database/database.sqlite
+      - key: SESSION_DRIVER
+        value: database
+      - key: CACHE_STORE
+        value: database
+      - key: QUEUE_CONNECTION
+        value: database
+      - key: MAIL_MAILER
+        value: smtp
+      - key: MAIL_HOST
+        value: smtp.gmail.com
+      - key: MAIL_PORT
+        value: "587"
+      - key: MAIL_USERNAME
+        value: your-email@gmail.com
+      - key: MAIL_PASSWORD
+        value: YOUR_GMAIL_APP_PASSWORD
+      - key: MAIL_ENCRYPTION
+        value: tls
+      - key: MAIL_FROM_ADDRESS
+        value: your-email@gmail.com
+      - key: MAIL_FROM_NAME
+        value: "Aoun"
